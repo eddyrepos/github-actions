@@ -1,6 +1,6 @@
 name: 01 - Building Bloks
 on: push
-Jobs:
+jobs:
   primer-job:
     runs-on: ubuntu:latest 
     steps:
