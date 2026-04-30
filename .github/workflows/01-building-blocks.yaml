@@ -1,0 +1,17 @@
+name: 01 - Building Bloks
+on: push
+Jobs:
+  primer-job:
+    runs-on: ubuntu:latest 
+    steps:
+      - name: step 1 Job 1
+        run: echo "Hola, mundo"
+  segundo-job:
+    runs-on: ubuntu:latest 
+    steps:
+      - name: steps 1 Job 2
+        run: |
+          echo "Falla job"
+          exit 1
+      - name: Steps 2 job 2
+        run: echo "Prueba job 2"
