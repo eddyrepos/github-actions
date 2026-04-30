@@ -1,8 +1,13 @@
 name: 02 - Workflows Event
-on: push
+on: 
+  push:
+  pull_request:
+  schedule: 
+    - cron: '*/5 * * * *'
+  workflow_dispatch:
 jobs:
   Build-job:
     runs-on: ubuntu-latest 
     steps:
       - name: Show trigger
-        run: echo "valor del event_name ${{github.event_name}} event"
+        run: echo "valor del event_name ${{github.event_name}}"
