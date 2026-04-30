@@ -1,5 +1,5 @@
 name: 01 - Building Bloks
-on: push
+on: workflow_dispatch
 jobs:
   primer-job:
     runs-on: ubuntu-latest 
