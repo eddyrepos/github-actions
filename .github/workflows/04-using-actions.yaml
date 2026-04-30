@@ -1,23 +1,15 @@
 name: 03 - Workflow Runners
-on: workflow_dispatch
+on: push
 jobs:
-  ubuntu-echo:
+  build:
     runs-on: ubuntu-latest 
     steps:
-      - name: Show OS
-        run: |
-          echo "This job is running on an Ubuntu runner"
-          echo "SYSTEM:  $RUNNER_OS"
-  windows-echo:
-    runs-on: windows-latest 
-    steps:
-      - name: Show OS
-        shell: bash
-        run: |
-          echo "This job is running on a Windows runner"
-          echo "SYSTEM:  $RUNNER_OS"
-  mac-echo:
-    runs-on: macos-latest 
-    steps:
-      - name: Show OS
-        run: echo "This job is running on a MacOS runner"
+      - name: Checkout Code
+        uses: actions/checkout@v4
+      - name: Setup Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: '20.x'
+      - name: Install Dependencies
+        run: npm ci
+        working-directory: 04-using-actions/react-app
