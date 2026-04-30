@@ -1,0 +1,8 @@
+name: 02 - Workflows Event
+on: push
+jobs:
+  Build-job:
+    runs-on: ubuntu-latest 
+    steps:
+      - name: Show trigger
+        run: echo "valor del event_name ${{github.event_name}} event"
