@@ -11,7 +11,7 @@ jobs:
     steps:
       - name: steps 1 Job 2
         run: |
-          echo "Falla job"
-          exit 1
+          echo "Job funcionando"
+          exit 0
       - name: Steps 2 job 2
         run: echo "Prueba job 2"
