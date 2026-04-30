@@ -2,12 +2,12 @@ name: 01 - Building Bloks
 on: push
 jobs:
   primer-job:
-    runs-on: ubuntu:latest 
+    runs-on: ubuntu-latest 
     steps:
       - name: step 1 Job 1
         run: echo "Hola, mundo"
   segundo-job:
-    runs-on: ubuntu:latest 
+    runs-on: ubuntu-latest 
     steps:
       - name: steps 1 Job 2
         run: |
