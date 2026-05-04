@@ -36,5 +36,5 @@ jobs:
           echo "Variable value: ${{ env.GLOBLA_OVERWRITTEN_VAR }}"
       - name: Print vars
         run: |
-          echo "Variable value: ${{ env.GLOBLA_VAR }}"
+          echo "Variable value: ${{ env.GLOBAL_VAR }}"
           echo "Variable value: ${{ env.GLOBLA_OVERWRITTEN_VAR }}"
