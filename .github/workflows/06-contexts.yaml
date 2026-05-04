@@ -7,10 +7,15 @@ on:
       debug:
         type: boolean
         default: false
-
+env:
+  GLOBAL_VAR: "GLOBAL ORIGIN"
+  GLOBLA_OVERWRITTEN_VAR: "GLOBAL"
 jobs:
   echo-data:
     runs-on: ubuntu-latest 
+    env:
+      JOB_VAR: "JOB VAR"
+      GLOBLA_OVERWRITTEN_VAR: "JOB OVERWRITTEN VAR"
     steps:
       - name: Display Information
         run: |
@@ -24,3 +29,12 @@ jobs:
       - name: Retrieve variable
         run: |
           echo "Variable value: ${{ vars.MY_VAR }}"
+      - name: Test vars
+        env: 
+          GLOBLA_OVERWRITTEN_VAR: "steps"
+        run: |
+          echo "Variable value: ${{ vars.GLOBLA_OVERWRITTEN_VAR }}"
+      - name: Print vars
+        run: |
+          echo "Variable value: ${{ vars.GLOBLA_VAR }}"
+          echo "Variable value: ${{ vars.GLOBLA_OVERWRITTEN_VAR }}"
