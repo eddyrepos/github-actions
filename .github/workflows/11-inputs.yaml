@@ -16,7 +16,7 @@ on:
         - v1
         - v2
         - v3
-      default: 3
+      default: v3
       description: "Release from which to build and deploy"
 jobs:
   Build:
