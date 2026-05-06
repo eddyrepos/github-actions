@@ -3,9 +3,9 @@ on:
   workflow_dispatch:
     inputs:
       use-cache:
-      description: Whether to execute cache steps
-      type: boolean
-      default: true 
+        description: Whether to execute cache steps
+        type: boolean
+        default: true 
 jobs:
   build:
     defaults:
