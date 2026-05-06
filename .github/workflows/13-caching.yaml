@@ -7,7 +7,8 @@ on:
         type: boolean
         default: true 
       node-version:
-        type: choice  
+        type: choice 
+        description: node version 
         options:
           - 18.x
           - 20.x
@@ -25,7 +26,7 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v3
         with:
-          node-version: '${{ inputs.node-version }}'
+          node-version: ${{ inputs.node-version }}
       - name: Download dependency
         uses: actions/cache@v3
         if: ${{ inputs.use-cache }}
