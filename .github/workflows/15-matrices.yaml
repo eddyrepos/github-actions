@@ -6,7 +6,7 @@ jobs:
     name: ${{ matrix.os }}-${{ matrix.node }}
     runs-on: ${{ matrix.os }}
     strategy:
-      fai-fast: false
+      fail-fast: false
       matrix:
         os: 
           - ubuntu-latest
