@@ -49,7 +49,7 @@ jobs:
           - opacity: 50
           - color: red
             shape: circle 
-            circle: large
+            size: large
         exclude:
           - color: red
             shape: circle
