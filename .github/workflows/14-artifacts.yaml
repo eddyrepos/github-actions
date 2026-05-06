@@ -35,6 +35,7 @@ jobs:
           path: 14-artifacts/react-app/build
   Deploy:
     runs-on: ubuntu-latest
+    needs: Build
     steps:
       - name: Download artifacts
         uses: actions/download-artifact@v3
