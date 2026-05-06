@@ -6,7 +6,7 @@ jobs:
     name: ${{ matrix.os }}-${{ matrix.node }}
     runs-on: ${{ matrix.os }}
     strategy:
-      fail-fast: true
+      fail-fast: true #(true) por defecto si un job de la matrix falla , los demas steps fallaran. (false) aunque falle un steps los demas se ejecutan.
       matrix:
         os: 
           - ubuntu-latest
@@ -31,3 +31,14 @@ jobs:
         run: exit 1
       - name: Perform some tests
         run: echo "Running tests on OS ${{ matrix.os }} and NodeJS ${{ matrix.node }}"
+  include-example:
+    name: ${{ matrix.color }}-${{ matrix.shape }}-${{ matrix.size }}
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        color: [blue, red]
+        shape: [cicle,square]
+        size: [small, medium ]
+        include:
+          - color: red  
+            shape: triangle
