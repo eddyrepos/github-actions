@@ -3,8 +3,10 @@ on:
   workflow_dispatch:
 jobs:
   backwards-compatibility:
+    name: ${{ matrix.os }}-${{ matrix.node }}
     runs-on: ${{ matrix.os }}
     strategy:
+      fai-fast: false
       matrix:
         os: 
           - ubuntu-latest
@@ -13,10 +15,19 @@ jobs:
           - 18.x
           - 20.x
           - 21.x
+        include:
+          - os: ubuntu-latest
+            node: 16.x
+          - os: ubuntu-latest
+            node: 21.x
+            tag: experimental
     steps:
       - name: Setup node
         uses: actions/setup-node@v4
         with:
           node-version: ${{ matrix.node }}
+      - name: Experimental fail
+        if: matrix.tag == 'experimental'
+        run: exit 1
       - name: Perform some tests
         run: echo "Running tests on OS ${{ matrix.os }} and NodeJS ${{ matrix.node }}"
