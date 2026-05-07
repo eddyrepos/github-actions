@@ -1,15 +1,5 @@
 name: Update NPM dependecy
 description: "Check if there are updates to npm packages , and create PR eith the uodated package.json."
-inputs:
-  node-version:
-    description: Nodejs version to use
-    default: 20.x
-    required: false
-  working-dir:
-    description: the working directory of the app
-    default: .
-    required: false 
-
 
 runs:
   using: node20
