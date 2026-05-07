@@ -3,4 +3,4 @@ description: "Check if there are updates to npm packages , and create PR eith th
 
 runs:
   using: node20
-  main: index.js
+  main: dist/index.js
