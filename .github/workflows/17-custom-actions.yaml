@@ -10,16 +10,13 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Setup NodeJS NPM dependencies
-        uses: ./.github/actions/compiste-cache-deps
+        uses: ./.github/actions/composite-cache-deps
         with:
           node-version: 20.x
           working-dir: 17-custom-actions/react-app
       - name: Test
         run: npm run test
-        
       - name: Build
         run: npm run build
-        working-directory: 17-custom-actions/react-app
       - name: Test
         run: npm run test
-        working-directory: 17-custom-actions/react-app
