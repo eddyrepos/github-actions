@@ -1,0 +1,12 @@
+name: 17 - Custom Actions - Composite
+on: 
+  workflow_dispatch:
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Setup NodeJS NPM dependencies
+        uses: ./.github/actions/compiste-cache-deps
+        with:
+          node-version: 20.x
+          working-directory: .
