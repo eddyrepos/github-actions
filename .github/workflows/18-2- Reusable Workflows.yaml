@@ -1,0 +1,13 @@
+name: 18 - 2 - Reusable Workflows
+
+on:
+  workflow_dispatch:
+    
+jobs:
+  call-reusable-workflow:
+    uses: ./.github/workflows/18-1-reusable-workflows.yaml
+  use-outputs:
+    needs: call-reusable-workflow
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo ${{ needs.call-reusable-workflow.outputs.path-output }}
