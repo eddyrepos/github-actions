@@ -9,10 +9,10 @@ jobs:
   Build:
     runs-on: ubuntu-latest
     outputs:
-      path-output: ${{ steps.my-step.outputs.path }}
+      path-output: ${{ steps.url.outputs.path }}
     steps:
-      - name: My Step
-        id: my-step
+      - name: echo to variable
+        id: url
         run: |
           # Do something
-          echo "path=my-value" >> "$GITHUB_OUTPUT"
+          echo "path=https://google.es" >> "$GITHUB_OUTPUT"
