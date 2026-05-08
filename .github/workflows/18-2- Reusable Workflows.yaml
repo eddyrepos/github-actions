@@ -10,4 +10,5 @@ jobs:
     needs: call-reusable-workflow
     runs-on: ubuntu-latest
     steps:
-      - run: echo ${{ needs.call-reusable-workflow.outputs.path-output }}
+      - run: |
+          echo ${{ needs.call-reusable-workflow.outputs.path-output }}

@@ -3,10 +3,10 @@ on:
   workflow_call:
     outputs:
       my-output:
-        value: ${{ jobs.my-job.outputs.path-output }}
+        value: ${{ jobs.Build.outputs.path-output }}
         
 jobs:
-  my-job:
+  Build:
     runs-on: ubuntu-latest
     outputs:
       path-output: ${{ steps.my-step.outputs.path }}
